@@ -1,21 +1,61 @@
 /* White Tab Text — Sine mod for Zen Browser
-   Tab yang TIDAK di-highlight (unloaded / loaded) = teks putih.
-   Tab yang di-highlight (selected) = tetap warna bawaan (hitam di tema kamu). */
+   - Teks tab yang TIDAK di-highlight (unloaded / loaded) = putih
+   - Teks tab yang di-highlight (selected) = tetap bawaan tema (hitam)
+   - Nama Space, nama folder, dan tombol "New Tab" = putih
+   - Icon tab yang unloaded = abu-abu (grayed out) */
 
 :root {
   --wtt-text-color: #ffffff;
   --wtt-text-opacity: 1;
+  --wtt-unloaded-icon-opacity: 0.55; /* 1 = tidak redup, 0 = hilang */
 }
 
-/* Semua tab biasa & pinned/essential yang tidak selected */
+/* ---------- 1. Teks tab (non-selected) ---------- */
 #tabbrowser-tabs .tabbrowser-tab:not([selected]):not([multiselected]) .tab-label-container,
-#tabbrowser-tabs .tabbrowser-tab:not([selected]):not([multiselected]) .tab-label {
-  color: var(--wtt-text-color) !important;
-  opacity: var(--wtt-text-opacity) !important;
-}
-
-/* Khusus tab unloaded/discarded (Zen kasih atribut [pending]) */
+#tabbrowser-tabs .tabbrowser-tab:not([selected]):not([multiselected]) .tab-label,
 #tabbrowser-tabs .tabbrowser-tab[pending]:not([selected]):not([multiselected]) .tab-label {
   color: var(--wtt-text-color) !important;
   opacity: var(--wtt-text-opacity) !important;
+}
+
+/* ---------- 2. Nama Space ---------- */
+.zen-current-workspace-indicator,
+.zen-current-workspace-indicator-name,
+#zen-current-workspace-indicator,
+#zen-current-workspace-indicator-name,
+.zen-workspace-tabs-section .zen-workspace-name,
+#zen-workspaces-button,
+#zen-workspaces-button label {
+  color: var(--wtt-text-color) !important;
+  opacity: var(--wtt-text-opacity) !important;
+}
+
+/* ---------- 3. Nama folder ---------- */
+zen-folder .tab-group-label,
+zen-folder .tab-group-label-container,
+zen-folder .tab-group-label-container label,
+.tab-group-label {
+  color: var(--wtt-text-color) !important;
+  opacity: var(--wtt-text-opacity) !important;
+}
+
+/* ---------- 4. Tombol "New Tab" ---------- */
+#tabbrowser-arrowscrollbox-periphery,
+#tabbrowser-arrowscrollbox-periphery #tabs-newtab-button,
+#tabbrowser-arrowscrollbox-periphery .toolbarbutton-text,
+.zen-workspace-tabs-section #tabs-newtab-button,
+.zen-workspace-tabs-section #tabs-newtab-button .toolbarbutton-text {
+  color: var(--wtt-text-color) !important;
+  opacity: var(--wtt-text-opacity) !important;
+}
+#tabbrowser-arrowscrollbox-periphery #tabs-newtab-button .toolbarbutton-icon,
+.zen-workspace-tabs-section #tabs-newtab-button .toolbarbutton-icon {
+  fill: var(--wtt-text-color) !important;
+  color: var(--wtt-text-color) !important;
+}
+
+/* ---------- 5. Icon tab unloaded = grayed out ---------- */
+#tabbrowser-tabs .tabbrowser-tab[pending]:not([selected]) .tab-icon-image {
+  filter: grayscale(1) !important;
+  opacity: var(--wtt-unloaded-icon-opacity) !important;
 }
