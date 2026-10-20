@@ -1,0 +1,14 @@
+{
+  "id": "c762abd6-3eb5-4dd3-aa56-12a5758a1f31",
+  "name": "White Tab Text",
+  "description": "Teks tab jadi putih saat unloaded atau loaded tapi tidak di-highlight, dan tetap warna bawaan saat di-highlight.",
+  "homepage": "https://github.com/7tyyseven/zen-white-tab-text",
+  "style": "https://raw.githubusercontent.com/7tyyseven/zen-white-tab-text/main/chrome.css",
+  "readme": "https://raw.githubusercontent.com/7tyyseven/zen-white-tab-text/main/readme.md",
+  "image": "",
+  "author": "7tyyseven",
+  "version": "1.0.0",
+  "tags": ["tabs", "text", "color"],
+  "createdAt": "2026-10-18",
+  "updatedAt": "2026-10-18"
+}

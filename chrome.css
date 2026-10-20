@@ -1,0 +1,21 @@
+/* White Tab Text — Sine mod for Zen Browser
+   Tab yang TIDAK di-highlight (unloaded / loaded) = teks putih.
+   Tab yang di-highlight (selected) = tetap warna bawaan (hitam di tema kamu). */
+
+:root {
+  --wtt-text-color: #ffffff;
+  --wtt-text-opacity: 1;
+}
+
+/* Semua tab biasa & pinned/essential yang tidak selected */
+#tabbrowser-tabs .tabbrowser-tab:not([selected]):not([multiselected]) .tab-label-container,
+#tabbrowser-tabs .tabbrowser-tab:not([selected]):not([multiselected]) .tab-label {
+  color: var(--wtt-text-color) !important;
+  opacity: var(--wtt-text-opacity) !important;
+}
+
+/* Khusus tab unloaded/discarded (Zen kasih atribut [pending]) */
+#tabbrowser-tabs .tabbrowser-tab[pending]:not([selected]):not([multiselected]) .tab-label {
+  color: var(--wtt-text-color) !important;
+  opacity: var(--wtt-text-opacity) !important;
+}
